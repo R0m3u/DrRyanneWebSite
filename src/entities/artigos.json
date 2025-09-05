@@ -1,0 +1,74 @@
+
+{
+  "name": "artigos",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["titulo", "conteudo", "categoria", "status", "createdAt"],
+        "properties": {
+          "titulo": {
+            "bsonType": "string",
+            "description": "Título do artigo"
+          },
+          "resumo": {
+            "bsonType": "string",
+            "description": "Resumo breve do artigo"
+          },
+          "conteudo": {
+            "bsonType": "string",
+            "description": "Conteúdo completo do artigo"
+          },
+          "categoria": {
+            "bsonType": "string",
+            "enum": ["ansiedade", "depressao", "relacionamentos", "autoestima", "stress", "terapia", "psicologia-infantil", "outros"],
+            "description": "Categoria do artigo"
+          },
+          "tags": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Tags do artigo"
+          },
+          "imagemCapa": {
+            "bsonType": "string",
+            "description": "URL da imagem de capa"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["rascunho", "publicado", "arquivado"],
+            "description": "Status de publicação"
+          },
+          "dataPublicacao": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de publicação"
+          },
+          "autor": {
+            "bsonType": "string",
+            "description": "Autor do artigo"
+          },
+          "visualizacoes": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Número de visualizações"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

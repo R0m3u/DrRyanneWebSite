@@ -1,0 +1,84 @@
+
+{
+  "name": "videos",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["titulo", "url", "categoria", "status", "createdAt"],
+        "properties": {
+          "titulo": {
+            "bsonType": "string",
+            "description": "Título do vídeo"
+          },
+          "descricao": {
+            "bsonType": "string",
+            "description": "Descrição do vídeo"
+          },
+          "url": {
+            "bsonType": "string",
+            "description": "URL do vídeo (YouTube, Vimeo, etc.)"
+          },
+          "thumbnail": {
+            "bsonType": "string",
+            "description": "URL da thumbnail"
+          },
+          "categoria": {
+            "bsonType": "string",
+            "enum": ["ansiedade", "depressao", "relacionamentos", "autoestima", "stress", "terapia", "psicologia-infantil", "outros"],
+            "description": "Categoria do vídeo"
+          },
+          "duracao": {
+            "bsonType": "string",
+            "description": "Duração do vídeo"
+          },
+          "tags": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Tags do vídeo"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["rascunho", "publicado", "arquivado"],
+            "description": "Status de publicação"
+          },
+          "dataPublicacao": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de publicação"
+          },
+          "visualizacoes": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Número de visualizações"
+          },
+          "destaque": {
+            "bsonType": "bool",
+            "description": "Se o vídeo é destaque"
+          },
+          "ordem": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Ordem de exibição"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
+

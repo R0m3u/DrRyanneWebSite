@@ -1,0 +1,64 @@
+
+{
+  "name": "especialidades",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["nome", "descricao", "ativo", "createdAt"],
+        "properties": {
+          "nome": {
+            "bsonType": "string",
+            "description": "Nome da especialidade"
+          },
+          "descricao": {
+            "bsonType": "string",
+            "description": "Descrição detalhada da especialidade"
+          },
+          "resumo": {
+            "bsonType": "string",
+            "description": "Resumo breve da especialidade"
+          },
+          "icone": {
+            "bsonType": "string",
+            "description": "Ícone representativo"
+          },
+          "imagem": {
+            "bsonType": "string",
+            "description": "URL da imagem ilustrativa"
+          },
+          "ativo": {
+            "bsonType": "bool",
+            "description": "Se a especialidade está ativa"
+          },
+          "ordem": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Ordem de exibição"
+          },
+          "duracao": {
+            "bsonType": "string",
+            "description": "Duração típica do tratamento"
+          },
+          "metodologia": {
+            "bsonType": "string",
+            "description": "Metodologia utilizada"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
