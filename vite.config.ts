@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+		base: "/DrRyanneWebSite",
     build,
     esbuild,
     define,
